@@ -39,7 +39,7 @@ class cre8SslFilter extends sfFilter
           }
         }
         // request is not SSL secured, but SSL is required
-        elseif ($actionInstance->sslRequired() && $this->redirectToHttps())
+        elseif ($actionInstance->sslRequired() && $this->redirectToHttps() && $context->getConfiguration()->getEnvironment() == 'prod')
         {
           $controller->redirect($actionInstance->getSslUrl());
           exit();
