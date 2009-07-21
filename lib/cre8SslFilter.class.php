@@ -19,6 +19,14 @@ class cre8SslFilter extends sfFilter
          // get the current action instance
         $actionEntry    = $controller->getActionStack()->getLastEntry();
         $actionInstance = $actionEntry->getActionInstance();
+        /*
+        echo '<pre>';
+        print_r(array(
+          'actionInstance_sslRequired' => $actionInstance->sslRequired()
+        ));
+        echo '</pre>';
+        die('-------- TEST --------');
+        */
         
         // request is SSL secured
         if ($request->isSecure())

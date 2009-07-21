@@ -18,13 +18,9 @@ class cre8SslMixin
     
     $actionName = strtolower($action->getActionName());
 
-    if (isset($security[$actionName]['require_ssl']))
-    {
+    if (isset($security[$actionName]['require_ssl'])) {
       $retVal = $security[$actionName]['require_ssl'];
-    }
-
-    if (isset($security['all']['require_ssl']))
-    {
+    } elseif(isset($security['all']['require_ssl'])) {
       $retVal = $security['all']['require_ssl'];
     }
     /*
